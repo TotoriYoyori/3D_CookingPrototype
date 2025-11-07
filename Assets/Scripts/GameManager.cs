@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public TileManager tile_manager;
+    public Player player;
+    public Camera main_camera;
     [HideInInspector] public Tile current_tile; // WIP thing, needs to be assigned
 
     [Header("Game parameters")]
@@ -14,5 +16,13 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+    }
+
+    // Checks if player can move around tiles and draft new tiles
+    public bool ExplorationEnabled()
+    {
+        if (tile_manager.draft.gameObject.activeSelf) return false; // exploration locked while drafting
+
+        return true;
     }
 }

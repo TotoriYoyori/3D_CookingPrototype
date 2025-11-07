@@ -1,11 +1,19 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
     [HideInInspector]
-    public Vector2 to_follow;
+    public Vector3 to_follow;
     [SerializeField] float speed;
+    [SerializeField] float y_offset;
+    [SerializeField] float z_offset;
     float camera_left_border, camera_right_border, camera_top_border, camera_bottom_border, camera_height, camera_width;
+
+    private void Start()
+    {
+        GameManager.instance.main_camera = this;
+    }
 
     void FixedUpdate()
     {
@@ -14,11 +22,10 @@ public class Camera : MonoBehaviour
     }
     void Follow()
     {
-        to_follow = GameManager.instance.current_tile.transform.position;
+        to_follow = GameManager.instance.player.transform.position;
         if (to_follow == null) return;
-        Vector2 new_position = new Vector2(to_follow.x, to_follow.y);
-        transform.position = Vector2.Lerp(transform.position, to_follow, speed);
-        transform.position += new Vector3(0, 0, -10f); // Fix this!!!
+        transform.position = Vector3.Lerp(transform.position, to_follow, speed);
+        transform.position += new Vector3(0, y_offset, z_offset); // Fix this!!!
     }
     /*
     void CameraBorders()
