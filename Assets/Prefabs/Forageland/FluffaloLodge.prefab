@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &762827944734689404
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5915746456781474252, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4830105017609682239, guid: dd490f16e800bf8428ec154e9fd8e52d, type: 3}
+    - target: {fileID: 5971315201639530996, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971315201639530996, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971315201639530996, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971315201639530996, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971315201639530996, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971315201639530996, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971315201639530996, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971315201639530996, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971315201639530996, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971315201639530996, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648927550923803514, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_Name
+      value: FluffaloLodge
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648927550923803514, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498769030725861425, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: t_name
+      value: Fluffalo Lodge
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498769030725861425, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: t_description
+      value: Add nut growth to the drafting pool
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498769030725861425, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: 'paths.Array.data[1]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498769030725861425, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: 'paths.Array.data[3]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498769030725861425, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: 'paths.Array.data[4]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7498769030725861425, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}
+      propertyPath: 'paths.Array.data[5]'
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a8832f26f64ec841844457e56450f2a, type: 3}

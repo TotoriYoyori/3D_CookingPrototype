@@ -1,0 +1,43 @@
+using UnityEngine;
+
+public class Camera : MonoBehaviour
+{
+    [HideInInspector]
+    public Vector2 to_follow;
+    [SerializeField] float speed;
+    float camera_left_border, camera_right_border, camera_top_border, camera_bottom_border, camera_height, camera_width;
+
+    void FixedUpdate()
+    {
+        Follow();
+        //CameraBorders();
+    }
+    void Follow()
+    {
+        to_follow = GameManager.instance.current_tile.transform.position;
+        if (to_follow == null) return;
+        Vector2 new_position = new Vector2(to_follow.x, to_follow.y);
+        transform.position = Vector2.Lerp(transform.position, to_follow, speed);
+        transform.position += new Vector3(0, 0, -10f); // Fix this!!!
+    }
+    /*
+    void CameraBorders()
+    {
+        camera_height = GetComponent<Camera>().orthographicSize;
+        camera_width = GetComponent<Camera>().aspect * camera_height;
+
+        camera_left_border = transform.position.x - camera_width / 2;
+        camera_bottom_border = transform.position.y - camera_height / 2;
+        camera_right_border = transform.position.x + camera_width / 2;
+        camera_top_border = transform.position.y + camera_height / 2;
+
+        if (camera_left_border < Game.level.left_level_border) transform.position =
+                new Vector3(Game.level.left_level_border + camera_width / 2, transform.position.y, transform.position.z);
+        if (camera_bottom_border < Game.level.bottom_level_border) transform.position =
+                new Vector3(transform.position.x, Game.level.bottom_level_border + camera_height / 2, transform.position.z);
+        if (camera_right_border > Game.level.right_level_border) transform.position =
+                new Vector3(Game.level.right_level_border - camera_width / 2, transform.position.y, transform.position.z);
+        if (camera_top_border > Game.level.top_level_border) transform.position =
+                new Vector3(transform.position.x, Game.level.top_level_border - camera_height / 2, transform.position.z);
+    }*/
+}

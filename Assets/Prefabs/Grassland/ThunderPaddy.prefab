@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2574894441045787938
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1612443220789713558, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: rarity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612443220789713558, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: t_name
+      value: Thunder paddy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612443220789713558, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: t_description
+      value: Chance of getting hit by lightning while passing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465098771720753629, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_Name
+      value: ThunderPaddy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465098771720753629, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3199950659714126699, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1153883532136524971, guid: daff6caeef7a2c7488f5458005324aa4, type: 3}
+    - target: {fileID: 3219556607178873683, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.227463
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219556607178873683, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6439512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219556607178873683, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219556607178873683, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219556607178873683, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219556607178873683, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219556607178873683, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219556607178873683, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219556607178873683, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3219556607178873683, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3754401229985339447, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021603067037367489, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952301948898318987, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb52dfd354c1fc34a9d05dda77063c8f, type: 3}

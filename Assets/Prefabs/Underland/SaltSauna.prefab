@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4502288107156041537
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5996443666186654914, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996443666186654914, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996443666186654914, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996443666186654914, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996443666186654914, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996443666186654914, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996443666186654914, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996443666186654914, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996443666186654914, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996443666186654914, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6048631410574712058, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -538693966525513314, guid: a287246b08c332342ba455deb307888e, type: 3}
+    - target: {fileID: 6749847280984006220, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_Name
+      value: SaltSauna
+      objectReference: {fileID: 0}
+    - target: {fileID: 6749847280984006220, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636135208981533959, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: rarity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636135208981533959, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: t_name
+      value: Salt sauna
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636135208981533959, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: t_description
+      value: Engineer NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636135208981533959, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: 'paths.Array.data[1]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636135208981533959, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: 'paths.Array.data[2]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636135208981533959, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: 'paths.Array.data[3]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636135208981533959, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: 'paths.Array.data[4]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7636135208981533959, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
+      propertyPath: 'paths.Array.data[5]'
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 65158afcc6c641a4a90e334ae4db5e55, type: 3}
