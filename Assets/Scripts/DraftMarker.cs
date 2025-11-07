@@ -47,14 +47,19 @@ public class DraftMarker : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!GameManager.instance.ExplorationEnabled()) return;
+
         // Changing the color when player clicks on the marker
         sprite.color = clicked_color;
     }
 
     private void OnMouseUp()
     {
+        if (!GameManager.instance.ExplorationEnabled()) return; 
+
         // Drafting a new tile in the picked spot
         GameManager.instance.tile_manager.NewDraft(transform.position, transform.localRotation, new Vector2(x, y));
+        gameObject.SetActive(false);
     }
 
 }

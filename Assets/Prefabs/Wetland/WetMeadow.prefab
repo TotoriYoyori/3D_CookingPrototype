@@ -9,10 +9,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6004439315918911228, guid: 6acbe0f9916274d4d9e3aac87084de15, type: 3}
-      propertyPath: m_Size.y
-      value: 2.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 6004439315918911228, guid: 6acbe0f9916274d4d9e3aac87084de15, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -7583755334771838860, guid: 67b88ca2c91c5ad448691ab22115a1cd, type: 3}
