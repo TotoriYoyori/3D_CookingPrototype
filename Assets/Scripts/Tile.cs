@@ -44,7 +44,7 @@ public class Tile : MonoBehaviour
     [Header("Object refs")] // references to other gameObjects
     public Tile[] connected_tiles = new Tile[6];
     TileManager tile_manager;
-    [HideInInspector] public int entrance_point_id = 0;
+    public int entrance_point_id = 0;
 
     [Header("misc")]
     [SerializeField] bool initialize_on_start;
@@ -66,9 +66,6 @@ public class Tile : MonoBehaviour
         tile_manager = GameManager.instance.tile_manager;
         tile_manager.tiles.Add(new Vector2(x, y), this);
 
-        // Temporary setting current tile here
-        GameManager.instance.current_tile = this;
-
         // Check if there are any tiles around that this tile could connect to
         CheckTilesAround();
 
@@ -76,17 +73,27 @@ public class Tile : MonoBehaviour
         SetEntrancePoint();
 
         // After initializing draft choices are initiated right away
-        tile_manager.ActivateDraftMarkers(this);
+        if (initialize_on_start)
+        {
+            tile_manager.ActivateDraftMarkers(this);
+            GameManager.instance.current_tile = this;
+        }
 
         Debug.Log("Tile: New Tile placed with coords: " + x + ", " + y);
+        Debug.Log("---------- Tile " + t_name + " Rotation -----------");
+        Debug.Log("Euler x: " + transform.eulerAngles.x + "Euler y: " + transform.eulerAngles.y + "Euler z: " + transform.eulerAngles.z);
+        Debug.Log("Rotation x: " + transform.rotation.x + "Rotation y: " + transform.rotation.y + "Rotation z: " + transform.rotation.z);
+        Debug.Log("---------------------------------------------------");
     }
 
     void SetEntrancePoint()
     {
-        entrance_point_id = (6 - (int)Mathf.Repeat(transform.eulerAngles.z, 360f) / 60) % 6;
+        //entrance_point_id = (6 - (int)Mathf.Repeat(transform.eulerAngles.y, 360f) / 60) % 6;
+        float y = transform.eulerAngles.y;
+        entrance_point_id = ((int)Mathf.Round((y % 360f) / 60f)) % 6;
     }
 
-    void CheckTilesAround() // checking for any neightbor tiles
+        void CheckTilesAround() // checking for any neightbor tiles
     {
         Vector2[] coords_around = GetCoordsAround();
         for (int a = 0; a < coords_around.Length; a++)
@@ -156,5 +163,23 @@ public class Tile : MonoBehaviour
     {
         int connected_tile_index = (int)Mathf.Repeat(entrance_point_id + side_index, 6);
         return connected_tiles[connected_tile_index];
+    }
+
+    void OnMouseEnter()
+    {
+        tile_manager.HighlightTile(this, true);
+    }
+
+    private void OnMouseExit()
+    {
+        tile_manager.HighlightTile(this, false);
+    }
+
+    private void OnMouseUp()
+    {
+        if (!GameManager.instance.ExplorationEnabled()) return;
+
+        tile_manager.HighlightTile(this, false);
+        tile_manager.MovePlayer(this);
     }
 }
