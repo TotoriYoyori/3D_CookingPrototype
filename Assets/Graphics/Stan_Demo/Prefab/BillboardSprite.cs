@@ -13,7 +13,7 @@ public class BillboardSprite : MonoBehaviour
     void LateUpdate()
     {
         // Get the camera
-        Camera mainCamera = GameManager.instance.main_camera;
+        CameraBehavior mainCamera = GameManager.instance.main_camera;
 
         // Make the sprite face the camera
         sprite_to_billboard.transform.forward = mainCamera.transform.forward;

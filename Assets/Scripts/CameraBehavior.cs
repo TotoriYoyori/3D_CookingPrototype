@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class CameraBehavior : MonoBehaviour
 {
     [HideInInspector]
     public Vector3 to_follow;

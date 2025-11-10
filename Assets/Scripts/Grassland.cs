@@ -9,7 +9,7 @@ public enum CropType
 }
 public class Grassland : MonoBehaviour
 { 
-    [Header("Configurations")]
+    [Header("Configurations")] 
     [SerializeField] int crop_amount_min;
     [SerializeField] int crop_amount_max;
     [SerializeField] CropType crop_type;
