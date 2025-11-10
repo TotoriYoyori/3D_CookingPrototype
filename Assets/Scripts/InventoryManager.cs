@@ -3,12 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class InventorySlot
-{
-    Item item_stored;
-    int amount;
-}
-
 public class InventoryManager : MonoBehaviour
 {
     [Header("Collection animation parameters")]
