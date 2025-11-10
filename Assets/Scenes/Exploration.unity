@@ -531,6 +531,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile_manager: {fileID: 260732461}
   player: {fileID: 0}
+  main_camera: {fileID: 0}
   current_tile: {fileID: 0}
   uncommon_tile_chance: 0.3
   rare_tile_chance: 0.05
@@ -975,8 +976,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 5
+  far clip plane: 75
   field of view: 60
   orthographic: 0
   orthographic size: 8
@@ -1140,7 +1141,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1757711648}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 50
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1496,7 +1497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912d56370e97f7c419a4a0b30cabf018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BillboardSprite
-  mainCamera: {fileID: 1757711648}
+  sprite_to_billboard: {fileID: 0}
 --- !u!114 &2093263898
 MonoBehaviour:
   m_ObjectHideFlags: 0
