@@ -31,8 +31,7 @@ public class Collectalbe : MonoBehaviour
     // Collect the object by clicking on it
     private void OnMouseUp()
     {
+        StartCoroutine(GameManager.instance.inventory_manager.Collect(item, amount, transform.position));
         this.gameObject.SetActive(false);
-        GameManager.instance.inventory_manager.Collect(item, amount, transform.position);
-       
     }
 }
