@@ -17,7 +17,7 @@ public class InventoryUIHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
     Vector3 default_size;
     Vector3 hovered_size;
     Vector3 clicked_size;
-    [HideInInspector] bool inventory_hidden;
+    [HideInInspector] public bool inventory_hidden;
 
     private void Start()
     {
@@ -40,6 +40,12 @@ public class InventoryUIHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
             InventorySlot new_slot = Instantiate(inventory_slot_prefab, inventory_slot_parent.transform.position, Quaternion.identity, inventory_slot_parent.transform);
             float current_slot_interval = -slot_interval * a;
             new_slot.gameObject.transform.Translate(0, current_slot_interval, 0);
+
+            // Storing the slots in the inventory manager
+            inventory_manager.inventory_slots.Add(new_slot);
+
+            // Adding ref to this to the slot
+            new_slot.inventory_button = this;
         }
 
         // Hide the slots right after spawning

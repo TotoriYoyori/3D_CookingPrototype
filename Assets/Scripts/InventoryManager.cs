@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Data;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -11,9 +12,13 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] float time_floating_up;
     List<GameObject> anim_gameobjects = new List<GameObject>();
 
+    [Header("Floating to inventory animation parameters")]
+    [SerializeField] float inventory_floating_anim_time;
+
     [Header("refs")]
     [SerializeField] Canvas canvas;
-    [SerializeField] GameObject inventory_object; // << do this class (button and slots and stuff)
+    [SerializeField] InventoryUIHandler inventory_object; 
+    [HideInInspector] public List<InventorySlot> inventory_slots = new List<InventorySlot>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +28,7 @@ public class InventoryManager : MonoBehaviour
     public IEnumerator Collect(Item item, int amount, Vector3 world_position)
     {
         Debug.Log("InventoryManager: " + item.item_name + " ("+amount+") has been collected");
+        InventorySlot item_inventory_slot;
 
         // 0) Creating the image GameObject
         GameObject item_anim_object = GetImageForAnimation();
@@ -57,17 +63,62 @@ public class InventoryManager : MonoBehaviour
             item_anim_object.transform.localPosition = Vector3.Lerp(start_position, end_position, cool_t);
             yield return null;
         }
+        item_anim_object.transform.localPosition = end_position;
 
         // 2) Item stays there for a bit
         yield return new WaitForSeconds(pause_before_collecting);
 
         // 3) Item flies towards the inventory slot
+        item_inventory_slot = AssignInventorySlot(item);
 
+        // no slots are available
+        if (item_inventory_slot == null)
+        {
+            Debug.Log("InventoryManager: no slots were available for storing " + item.item_name);
+            item_anim_object.SetActive(false);
+            yield break;
+        }
 
-        // 4) Item is popping in the inventory slot
-        // 5) Item is added to the inventory slot
+        t = 0;
+        Vector3 anim_start_position = item_anim_object.transform.position;
+        // Checking if the backpack is open or closed
+        Vector3 anim_end_position = (inventory_object.inventory_hidden) ? inventory_object.transform.position : item_inventory_slot.transform.position;
 
+        while (t < inventory_floating_anim_time)
+        {
+            t += Time.deltaTime;
+            float t_clamped = Mathf.Clamp01(t / inventory_floating_anim_time);
+
+            float cool_t = t_clamped * t_clamped; // slow >>> fast
+            item_anim_object.transform.position = Vector3.Lerp(anim_start_position, anim_end_position, cool_t);
+            yield return null;
+        }
+        item_anim_object.transform.position = anim_end_position;
+
+        // 4) Adding the item to the inventory slot
+        item_anim_object.SetActive(false);
+        item_inventory_slot.StoreItem(item, amount);
+        
         yield return null;
+    }
+
+    InventorySlot AssignInventorySlot(Item item)
+    {
+        // Checking if there is already a slot storing desired item
+        for (int a = 0; a < inventory_slots.Count; a++)
+        {
+            if (inventory_slots[a].stored_item == item) return inventory_slots[a];
+        }
+
+        // Checking for next empty slot
+        for (int a = 0; a < inventory_slots.Count; a++)
+        {
+            if (inventory_slots[a].stored_item == null) return inventory_slots[a];
+        }
+
+        // No slots are empty or store the same item
+        return null;
+        
     }
 
     GameObject GetImageForAnimation()

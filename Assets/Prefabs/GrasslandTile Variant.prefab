@@ -382,8 +382,8 @@ MonoBehaviour:
   tree_prefab: {fileID: 976415746413421658, guid: 20c3a97eabf7c8c4586d69cb96df8657, type: 3}
   crop_spots: {fileID: 5244192139986279312}
   crop_prefabs:
-  - {fileID: 520938793834342120, guid: 3f1c48cf01f30944d8e454b870b7dfd2, type: 3}
-  - {fileID: 520938793834342120, guid: 3f1c48cf01f30944d8e454b870b7dfd2, type: 3}
+  - {fileID: 4082537413088484448, guid: fa9d23a979917a54cb7f552a90d461f0, type: 3}
+  - {fileID: 4082537413088484448, guid: fa9d23a979917a54cb7f552a90d461f0, type: 3}
 --- !u!4 &3219556607178873683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7194019746204974222, guid: 6427b006bb43f3c4697a6ccd0f4bab9c, type: 3}
