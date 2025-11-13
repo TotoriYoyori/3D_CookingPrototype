@@ -45,6 +45,7 @@ public class Tile : MonoBehaviour
     public Tile[] connected_tiles = new Tile[6];
     TileManager tile_manager;
     public int entrance_point_id = 0;
+    [SerializeField] Collider tile_collider;
 
     [Header("misc")]
     [SerializeField] bool initialize_on_start;
@@ -114,6 +115,12 @@ public class Tile : MonoBehaviour
 
         int other_tile_index = (index + 3) % 6;
         tile_to_connect.connected_tiles[other_tile_index] = this;
+    }
+
+    public void SetAsCurrentTile(bool is_current_tile)
+    {
+        GameManager.instance.current_tile = this;
+        tile_collider.enabled = !is_current_tile;
     }
 
     Vector2[] GetCoordsAround() // Giving a list of coordinates for potential tiles that could be around a tile with named coords

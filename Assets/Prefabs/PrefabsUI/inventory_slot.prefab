@@ -307,8 +307,9 @@ MonoBehaviour:
   amount_obj: {fileID: 5756934099539697690}
   amount_text: {fileID: 6921732530381916495}
   stored_item_sprite: {fileID: 5119224529026982974}
+  inventory_button: {fileID: 0}
   sprite_upscale_coof: 1.3
-  upscale_animation_length: 1.5
+  upscale_animation_length: 0.2
 --- !u!1 &9050970703489976125
 GameObject:
   m_ObjectHideFlags: 0

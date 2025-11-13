@@ -11,6 +11,7 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] float distance_floating_up;
     [SerializeField] float time_floating_up;
     List<GameObject> anim_gameobjects = new List<GameObject>();
+    [SerializeField] float animation_speed = 10;
 
     [Header("Floating to inventory animation parameters")]
     [SerializeField] float inventory_floating_anim_time;
@@ -25,9 +26,13 @@ public class InventoryManager : MonoBehaviour
         GameManager.instance.inventory_manager = this;
     }
 
-    public IEnumerator Collect(Item item, int amount, Vector3 world_position)
+    public void StartCollect(Item item, int amount, Vector3 world_position)
     {
-        Debug.Log("InventoryManager: " + item.item_name + " ("+amount+") has been collected");
+        StartCoroutine(Collect(item, amount, world_position));
+    }
+    IEnumerator Collect(Item item, int amount, Vector3 world_position)
+    {
+        Debug.Log("InventoryManager: Collection of " + item.item_name + " ("+amount+") has been started.");
         InventorySlot item_inventory_slot;
 
         // 0) Creating the image GameObject
@@ -36,34 +41,27 @@ public class InventoryManager : MonoBehaviour
 
         // 0.1) Setting the position
         Vector3 screen_position = Camera.main.WorldToScreenPoint(world_position);
-
-        // Convert screen position to local canvas position
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvas.transform as RectTransform,
-            screen_position,
-            canvas.worldCamera,
-            out Vector2 local_point
-        );
-
-        // Apply to RectTransform
-        RectTransform rt = item_anim_object.GetComponent<RectTransform>();
-        rt.anchoredPosition = local_point;
+        item_anim_object.transform.position = screen_position;
 
         // 1) Item floats up above collected spot
         float t = 0;
         Vector2 end_position = new Vector2(item_anim_object.transform.position.x, item_anim_object.transform.position.y + distance_floating_up);
         Vector2 start_position = item_anim_object.transform.position;
 
+        Debug.Log("InventoryManager: Collect is still running (1)");
+
         while (t <= time_floating_up)
         {
-            t += Time.deltaTime;
+            Debug.Log("InventoryManager: Collect is running the while loop, t= " + t);
+            t += Time.deltaTime * animation_speed;
             float t_clamped = Mathf.Clamp01(t / time_floating_up);
 
             float cool_t = 1 - (1 - t_clamped) * (1 - t_clamped); // fast >>> slow          (float cool_t = t_clamped * t_clamped; // slow >>> fast)
-            item_anim_object.transform.localPosition = Vector3.Lerp(start_position, end_position, cool_t);
+            item_anim_object.transform.position = Vector3.Lerp(start_position, end_position, cool_t);
             yield return null;
         }
-        item_anim_object.transform.localPosition = end_position;
+        item_anim_object.transform.position = end_position;
+        //Debug.Log("InventoryManager: " + item.item_name + " floated up to (" + rt.anchoredPosition.x + ", " + rt.anchoredPosition.y + ")");
 
         // 2) Item stays there for a bit
         yield return new WaitForSeconds(pause_before_collecting);
@@ -86,7 +84,7 @@ public class InventoryManager : MonoBehaviour
 
         while (t < inventory_floating_anim_time)
         {
-            t += Time.deltaTime;
+            t += Time.deltaTime * animation_speed;
             float t_clamped = Mathf.Clamp01(t / inventory_floating_anim_time);
 
             float cool_t = t_clamped * t_clamped; // slow >>> fast
@@ -94,6 +92,7 @@ public class InventoryManager : MonoBehaviour
             yield return null;
         }
         item_anim_object.transform.position = anim_end_position;
+        Debug.Log("InventoryManager: " + item.item_name + " flew towards its item slot.");
 
         // 4) Adding the item to the inventory slot
         item_anim_object.SetActive(false);

@@ -9,7 +9,13 @@ public class Collectalbe : MonoBehaviour
     [Header("refs")]
     [SerializeField] GameObject default_aura;
     [SerializeField] GameObject highlighted_aura;
+    Tile host_tile;
+
     
+    void Activate(bool is_active)
+    {
+
+    }
 
     private void OnMouseEnter()
     {
@@ -31,7 +37,7 @@ public class Collectalbe : MonoBehaviour
     // Collect the object by clicking on it
     private void OnMouseUp()
     {
-        StartCoroutine(GameManager.instance.inventory_manager.Collect(item, amount, transform.position));
+        GameManager.instance.inventory_manager.StartCollect(item, amount, transform.position);
         this.gameObject.SetActive(false);
     }
 }

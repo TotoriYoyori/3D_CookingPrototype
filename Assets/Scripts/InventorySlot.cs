@@ -47,6 +47,8 @@ public class InventorySlot : MonoBehaviour
 
         StartCoroutine(StoreItemAnimation());
         UpdateAmount();
+
+        Debug.Log("InventorySlot: slot now stores " + item.item_name + " (" + amount + ")");
     }
 
     // Removing anything that was stored here

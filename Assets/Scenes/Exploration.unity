@@ -521,9 +521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa99a32fc18505f40a82ff85d4cb5d95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
-  pause_before_collecting: 2
-  distance_floating_up: 1
-  time_floating_up: 1
+  pause_before_collecting: 1
+  distance_floating_up: 60
+  time_floating_up: 3
+  animation_speed: 3
   inventory_floating_anim_time: 2
   canvas: {fileID: 1776711537}
   inventory_object: {fileID: 134759086}
@@ -1369,7 +1370,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 40
   orthographic: 0
   orthographic size: 8
   m_Depth: -1
