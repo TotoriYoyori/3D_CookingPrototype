@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheat_collectable Variant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4082537413088484448, guid: fa9d23a979917a54cb7f552a90d461f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8414707744818127770, guid: fa9d23a979917a54cb7f552a90d461f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.74
@@ -615,6 +619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheat_collectable Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4082537413088484448, guid: fa9d23a979917a54cb7f552a90d461f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8414707744818127770, guid: fa9d23a979917a54cb7f552a90d461f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.35
@@ -671,6 +679,10 @@ PrefabInstance:
     - target: {fileID: 4082537413088484448, guid: fa9d23a979917a54cb7f552a90d461f0, type: 3}
       propertyPath: m_Name
       value: Wheat_collectable Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4082537413088484448, guid: fa9d23a979917a54cb7f552a90d461f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8414707744818127770, guid: fa9d23a979917a54cb7f552a90d461f0, type: 3}
       propertyPath: m_LocalPosition.x

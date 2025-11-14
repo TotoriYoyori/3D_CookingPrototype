@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4298238070485136041}
   - component: {fileID: 1814677082122249308}
   - component: {fileID: 367304272247050682}
+  - component: {fileID: 7897452822978215522}
   m_Layer: 0
   m_Name: Collectable
   m_TagString: Untagged
@@ -69,7 +70,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4, y: 1.8, z: 0.2}
+  m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: -0.05, y: 0.5, z: 0}
 --- !u!114 &367304272247050682
 MonoBehaviour:
@@ -85,8 +86,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Collectalbe
   item: {fileID: 0}
   amount: 0
+  tile_obj: {fileID: 7897452822978215522}
+--- !u!114 &7897452822978215522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2986015800637119625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 484b391222c6e464ab716d45eba2129e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TileObject
   default_aura: {fileID: 3939638799595495430}
   highlighted_aura: {fileID: 6149938704856592191}
+  active: 0
 --- !u!1 &3939638799595495430
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3266155363911372320
 Transform:
   m_ObjectHideFlags: 0
@@ -165,7 +180,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.3019608}
   m_FlipX: 0
@@ -255,7 +270,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.67058825}
   m_FlipX: 0

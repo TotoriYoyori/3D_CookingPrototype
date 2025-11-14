@@ -42,7 +42,7 @@ public class InventorySlot : MonoBehaviour
         {
             stored_item = item;
             amount = input_amount;
-            stored_item_sprite.sprite = stored_item.item_sprite;
+            UpdateSprite();
         }
 
         StartCoroutine(StoreItemAnimation());
@@ -60,7 +60,18 @@ public class InventorySlot : MonoBehaviour
 
         UpdateAmount();
     }
+    void OnEnable()
+    {
+        UpdateSprite();
+        UpdateAmount();
+    }
+    
+    void UpdateSprite()
+    {
+        stored_item_sprite.sprite = (stored_item == null) ? null : stored_item.item_sprite;
 
+        stored_item_sprite.enabled = (stored_item_sprite.sprite == null) ? false : true; // disables the sprite if the slot is empty
+    }
     void UpdateAmount()
     {
         amount_text.text = amount.ToString();

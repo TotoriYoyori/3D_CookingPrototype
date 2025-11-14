@@ -21,6 +21,7 @@ public class Grassland : MonoBehaviour
     [SerializeField] GameObject crop_spots;
     List<GameObject> crops = new List<GameObject>();
     [SerializeField] GameObject[] crop_prefabs; // 0- wheat, 1- rice
+    [SerializeField] Tile tile;
 
     private void Start()
     {
@@ -37,6 +38,7 @@ public class Grassland : MonoBehaviour
         for (int a = 0; a < trees.Count; a++)
         {
             GameObject new_tree = Instantiate(tree_prefab, trees[a].transform.position, Quaternion.identity, transform);
+            tile.AddTileObject(new_tree);
         }
     }
 
@@ -56,6 +58,9 @@ public class Grassland : MonoBehaviour
 
             // Spawn the crop
             GameObject new_crop = Instantiate(crop_prefabs[(int)crop_type], crops[random_crop_spot_id].transform.position, Quaternion.identity, transform);
+            tile.AddTileObject(new_crop);
+
+            crops.Remove(crops[random_crop_spot_id]); // removing the spot so that crops dont spawn on the same spot twice
         }
     }
 

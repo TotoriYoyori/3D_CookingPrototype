@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
-
+using System.Collections.Generic;
 public enum Rarity
 {
     BASIC,
@@ -39,7 +39,8 @@ public class Tile : MonoBehaviour
     public GameObject[] sides;
     [SerializeField] GameObject[] borders;
     [SerializeField] GameObject border_obj;
-    public SpriteRenderer sprite; 
+    public SpriteRenderer sprite;
+    public List<TileObject> tile_objs = new List<TileObject>();
 
     [Header("Object refs")] // references to other gameObjects
     public Tile[] connected_tiles = new Tile[6];
@@ -94,7 +95,7 @@ public class Tile : MonoBehaviour
         entrance_point_id = ((int)Mathf.Round((y % 360f) / 60f)) % 6;
     }
 
-        void CheckTilesAround() // checking for any neightbor tiles
+    void CheckTilesAround() // checking for any neightbor tiles
     {
         Vector2[] coords_around = GetCoordsAround();
         for (int a = 0; a < coords_around.Length; a++)
@@ -117,10 +118,25 @@ public class Tile : MonoBehaviour
         tile_to_connect.connected_tiles[other_tile_index] = this;
     }
 
+    // Adds newly spawned object to the list of tile objects if it has TileObject component (meaning it can be interacted with)
+    public void AddTileObject(GameObject new_obj)
+    {
+        if (new_obj.TryGetComponent<TileObject>(out TileObject tile_obj))
+        {
+            tile_objs.Add(tile_obj); // adding the tree into tile object list if trees are interactable
+        }
+    }
+
     public void SetAsCurrentTile(bool is_current_tile)
     {
         GameManager.instance.current_tile = this;
         tile_collider.enabled = !is_current_tile;
+
+        // Activating tile objects
+        for (int a = 0; a < tile_objs.Count; a++)
+        {
+            tile_objs[a].Activate(is_current_tile);
+        }
     }
 
     Vector2[] GetCoordsAround() // Giving a list of coordinates for potential tiles that could be around a tile with named coords

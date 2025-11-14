@@ -49,7 +49,7 @@ public class InventoryUIHandler : MonoBehaviour, IPointerEnterHandler, IPointerE
         }
 
         // Hide the slots right after spawning
-        HideInverntory(true);
+        //HideInverntory(true);
     }
 
     // ---- Input and juice for the inventory button --------
