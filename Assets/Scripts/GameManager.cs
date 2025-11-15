@@ -4,11 +4,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public TileManager tile_manager;
-    public InventoryManager inventory_manager;
     public Player player;
     public CameraBehavior main_camera;
     [HideInInspector] public Tile current_tile; // WIP thing, needs to be assigned
+
+    [Header("Managers")]
+    public TileManager tile_manager;
+    public InventoryManager inventory_manager;
+    public UIHandler UI;
 
     [Header("Game parameters")]
     public float uncommon_tile_chance;

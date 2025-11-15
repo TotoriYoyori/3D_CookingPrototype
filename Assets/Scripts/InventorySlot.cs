@@ -1,9 +1,11 @@
-using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
 using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using static UnityEditor.Progress;
 
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("What it stores")]
     public Item stored_item;
@@ -115,5 +117,16 @@ public class InventorySlot : MonoBehaviour
         }
 
         stored_item_sprite.transform.localScale = default_sprite_size; // snapping into correct size at the end
+    }
+
+    // Text tag appearing when hovering over
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        string text_to_show = stored_item.item_name;
+        GameManager.instance.UI.ShowTextTag(text_to_show, TextTagPlacement.LEFT, this.gameObject);
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        GameManager.instance.UI.HideTextTag();
     }
 }
